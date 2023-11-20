@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mesh Gradient | Megat Irfan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'DM Sans', sans-serif;
+      }
+      .background--custom {
+        background-color: #242424;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        overflow: hidden;
+        z-index: -2;
+        top: 0;
+        left: 0;
+      }
+      canvas#canvas {
+        z-index: -1;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        transform: rotate(-12deg) scale() translateY(0%);
+        --gradient-color-1: #47D3FA; 
+        --gradient-color-2: #5859DF; 
+        --gradient-color-3: #E3D3ED;  
+        --gradient-color-4: #FB5689;
+        --gradient-speed: 0.000006;
+      }
+      .coming-soon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: #ffffff;
+      }
+      .created-by {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .created-by a {
+        color: #ffffff; /* Set the link color to white */
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background--custom">
+      <canvas id="canvas"></canvas>
+      <div class="coming-soon">Coming Soon!</div>
+      <div class="created-by">Created by <b><a href="https://megatirfan.com">Megat Irfan</a></b></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+    <script>
+      var gradient = new Gradient();
+      gradient.initGradient("#canvas");
+    </script>
+  </body>
+</html>
